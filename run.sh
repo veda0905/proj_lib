@@ -47,6 +47,11 @@ echo "Test Summary:"
 echo -e "${GREEN}Passed: ${passed}${NC}"
 echo -e "${RED}Failed: ${failed}${NC}"
 echo "Total: $((passed + failed))"
+if((failed == 0)); then
+    echo -e "${GREEN}All tests passed!${NC}"
+else
+    echo -e "${RED}${failed} tests failed.${NC}"
+fi
 
 # Exit with failure if any tests failed
 [ "$failed" -eq 0 ]
